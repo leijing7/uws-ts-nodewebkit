@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="tsapp">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  	<script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
+  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+    <title>UWS Timesheet</title>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+  <div class="container" ng-controller="TsCtrl" style="margin-top:25px">
+  	<h1>Auto UWS Timesheet</h1>
+  	<hr />
+  	<div class="row">
+  		<form class="form-horizontal" role="form">
+		    <div class="form-group">
+		      <label class="col-xs-2 control-label">Staff Number:</label>
+		      <div class="col-xs-2">
+		      	<input type="text" class="form-control" placeholder="staff number" ng-model="setting.staffNumber">
+		      </div>
+		      <label class="col-xs-2 control-label">Password:</label>
+		      <div class="col-xs-2">
+		      	<input type="password" class="form-control" placeholder="password" ng-model="setting.password">
+		      </div>
+		      <div class="checkbox col-xs-4">
+			    <label>
+			      <input type="checkbox" ng-model="setting.rememberPassword"> Remember Password
+			    </label>
+			  </div>
+		    </div>
+	    </form>
+	</div>
+
+	<hr />
+
+    <br/>
+  	<div class="row">
+
+	    <div class="col-xs-2">
+	      <label>Start Time:</label>
+	      <input type="text" class="form-control" placeholder="Start time" ng-model="setting.startTime">
+	    </div>
+
+	    <div class="col-xs-2">
+	      <label>Finish Time:</label>
+	      <input type="text" class="form-control" placeholder="Finish time" ng-model="setting.finishTime">
+	    </div>
+
+	    <div class="col-xs-3">
+	      <label>Lunch Minutes:</label>
+	      <input type="text" class="form-control" placeholder="lunch minutes" ng-model="setting.lunchMinutes">
+	    </div>
+	    <br />
+	    <div class="col-xs-2 col-xs-offset-2">
+    		<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="go()">Go</button>
+    	</div>
+    </div>
+
+<!-- 	<div class="row">
+		<div class="col-xs-4 col-xs-offset-5">
+    		<button type="button" class="btn btn-primary btn-lg" ng-click="saveDefaultTime()">Save Default Time</button>
+    	</div>
+    </div> -->
+    <br />
+	<hr />
+    <footer style="text-align: right">
+    <!-- Node.js <script>document.write(process.version)</script> -->
+    	v0.1.0
+    </footer>
+
+  </div>
+
+  </body>
+</html>
